@@ -1,4 +1,4 @@
-NAME		=	Bureaucratie
+NAME		=	Converter
 
 GREEN		=	\033[1;32m
 RED			=	\033[1;31m
@@ -11,8 +11,8 @@ INC_DIR		=	$(shell find includes -type d)
 vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
-SRCS		=	main.cpp			\
-				
+SRCS		=	ScalarConverter.cpp			\
+
 
 
 OBJS		=	$(SRCS:%.cpp=${OBJ_DIR}/%.o)
@@ -27,7 +27,7 @@ all:	${NAME}
 
 $(NAME): ${OBJS} ${INC_DIR}
 		@${CC} ${CFLAGS} ${OBJS} -I ${INC_DIR} -o ${NAME}
-		@echo "$(GREEN)##### Bureaucratie compiling finished! #####$(DEFAULT)"
+		@echo "$(GREEN)##### Converter compiling finished! #####$(DEFAULT)"
 
 $(OBJ_DIR)/%.o: %.cpp ${INC_DIR} | $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -c $< -o $@ -I ${INC_DIR}

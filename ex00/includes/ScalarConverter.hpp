@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:43:43 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/19 16:36:50 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/20 18:44:51 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
+# include <cmath>
+#include <limits>
+# include <string>
+# include <sstream>
+# include <cstdlib>
+# include <iomanip>
 
 class ScalarConverter
 {
@@ -21,18 +27,18 @@ class ScalarConverter
 
 	public:
 
-		ScalarConverter();
+		ScalarConverter(void);
 		ScalarConverter(ScalarConverter const &copy);
-		~ScalarConverter();
+		~ScalarConverter(void);
 
-		ScalarConverter &operator=(ScalarConverter const &toCopy);
+		ScalarConverter	&operator = (ScalarConverter const &toCopy);
 
-		static void	convert(std::string& str);
+		static void		convert(std::string input);
 
-		class	NonDisplayableException : public std::exception{
-			public:
-				virtual const char* what() const throw();
-		};
+		static void		printChar(std::string str);
+		static void		printInt(std::string str);
+		static void		printFloat(std::string str);
+		static void		printDouble(std::string str);
 
 };
 
