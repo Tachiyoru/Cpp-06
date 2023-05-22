@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:48:44 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/20 18:44:27 by sleon            ###   ########.fr       */
+/*   Updated: 2023/05/22 12:25:36 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ bool	onlyDigit(std::string input)
 void	ScalarConverter::convert(std::string input)
 {
 	if (onlyDigit(input) == false)
+	{
+		std::cout << "invalid argument" << std::endl;
+		return ;
+	}
+	if (input.size() > 9 && input[9]!= 'f')
 	{
 		std::cout << "invalid argument" << std::endl;
 		return ;

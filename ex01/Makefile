@@ -1,4 +1,4 @@
-NAME		=	Converter
+NAME		=	Serialiser
 
 GREEN		=	\033[1;32m
 RED			=	\033[1;31m
@@ -12,7 +12,6 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 SRCS		=	main.cpp			\
-				ScalarConverter.cpp
 
 
 
@@ -28,7 +27,7 @@ all:	${NAME}
 
 $(NAME): ${OBJS} ${INC_DIR}
 		@${CC} ${CFLAGS} ${OBJS} -I ${INC_DIR} -o ${NAME}
-		@echo "$(GREEN)##### Converter compiling finished! #####$(DEFAULT)"
+		@echo "$(GREEN)##### Serialiser compiling finished! #####$(DEFAULT)"
 
 $(OBJ_DIR)/%.o: %.cpp ${INC_DIR} | $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -c $< -o $@ -I ${INC_DIR}
