@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 12:11:22 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/22 14:35:57 by sleon            ###   ########.fr       */
+/*   Created: 2023/05/22 14:24:52 by sleon             #+#    #+#             */
+/*   Updated: 2023/05/22 14:37:03 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-# include <string>
+# include <iostream>
+# include <stdint.h>
+# include "Data.hpp"
 
-typedef struct	s_Data
+class Serializer
 {
-	std::string str;
-}Data;
+	private:
 
+	public:
+
+		Serializer();
+		Serializer(Serializer const &copy);
+		~Serializer();
+
+		Serializer &operator=(Serializer const &toCopy);
+
+		static	uintptr_t serialize(Data *ptr);
+		static	Data	*deserialize(uintptr_t raw);
+};
 
 #endif

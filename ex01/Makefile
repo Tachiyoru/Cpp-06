@@ -12,6 +12,7 @@ vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 vpath %.hpp $(foreach dir, $(INC_DIR), $(dir):)
 
 SRCS		=	main.cpp			\
+				Serializer.cpp	
 
 
 

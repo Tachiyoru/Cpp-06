@@ -1,4 +1,4 @@
-NAME		=	Serialiser
+NAME		=	Base
 
 GREEN		=	\033[1;32m
 RED			=	\033[1;31m
@@ -27,7 +27,7 @@ all:	${NAME}
 
 $(NAME): ${OBJS} ${INC_DIR}
 		@${CC} ${CFLAGS} ${OBJS} -I ${INC_DIR} -o ${NAME}
-		@echo "$(GREEN)##### Serialiser compiling finished! #####$(DEFAULT)"
+		@echo "$(GREEN)##### Base compiling finished! #####$(DEFAULT)"
 
 $(OBJ_DIR)/%.o: %.cpp ${INC_DIR} | $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -c $< -o $@ -I ${INC_DIR}

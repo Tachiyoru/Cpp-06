@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 12:11:22 by sleon             #+#    #+#             */
-/*   Updated: 2023/05/22 14:35:57 by sleon            ###   ########.fr       */
+/*   Created: 2023/05/22 14:42:50 by sleon             #+#    #+#             */
+/*   Updated: 2023/05/22 14:45:04 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef C_HPP
+# define C_HPP
 
-# include <string>
+# include "Base.hpp"
 
-typedef struct	s_Data
-{
-	std::string str;
-}Data;
-
+class C : public Base {};
 
 #endif
